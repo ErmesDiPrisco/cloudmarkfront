@@ -1,1 +1,15 @@
-<p>azienda works!</p>
+<div class="m-5 col-5">
+  <h2 class="text-dark">Lista Aziende</h2>
+<table class="table ">
+    <thead class="bg-dark text-white">
+      <tr>
+        <th scope="col" >Nome</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let e of aziende | async">
+      <tr>
+        <th>{{e.nome}}</th>
+      </tr>
+    </tbody>
+</table><br>
+</div>

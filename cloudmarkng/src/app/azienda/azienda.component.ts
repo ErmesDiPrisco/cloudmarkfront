@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Azienda } from '../modules/azienda';
+import { AziendaService } from '../services/azienda.service';
 
 @Component({
   selector: 'app-azienda',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./azienda.component.css']
 })
 export class AziendaComponent {
+  aziende=this.aziendaService.getAllCompanies()
+
+  constructor(private aziendaService: AziendaService){
+
+  }
 
 }
