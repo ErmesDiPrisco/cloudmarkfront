@@ -17,6 +17,9 @@ export class AziendaService {
   getAllCompanies(): Observable<Azienda[]> {
     return this.http.get<Azienda[]>(`${URL}/azienda/all`)
   }
+  getCompanyById(id: string) {
+    return this.http.get<Azienda[]>(`${URL}/azienda/company?id=${id}`)
+  }
 
 }
 

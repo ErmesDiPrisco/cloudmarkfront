@@ -1,0 +1,23 @@
+<p>azienda-details works!</p>
+<h2 class="text-dark">Slave Details</h2>
+<div class="m-5">
+    <table class="table ">
+        <thead class="bg-dark text-white">
+          <tr>
+            <th scope="col" >ID</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Cognome</th>
+            <th scope="col">Nome</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of azienda | async">
+            <th>{{a}}</th>
+            <td>{{azienda}}</td>
+            <td>{{azienda}}</td>
+            <td>{{azienda}}</td>
+          </tr>
+        </tbody>
+    </table><br>
+    <button class="btn btn-dark" routerLink="/">Home</button>
+    </div>

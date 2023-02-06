@@ -32,7 +32,7 @@
         <h3>{{e.nome}}</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, 
           voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <a class="btn btn-dark" href="#">Info</a>
+        <button class="btn btn-dark" [routerLink]="['aziendaDetails/:']" [queryParams]="{ company: e.id_azienda }">Info</button>
       </div>
     </div>
     <!-- /.row -->
