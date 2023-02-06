@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { AziendaService } from '../services/azienda.service';
 import { AziendaComponent } from '../azienda/azienda.component';
 import { Azienda } from '../modules/azienda';
@@ -11,21 +11,18 @@ import { Observable } from 'rxjs';
   styleUrls: ['./azienda-details.component.css']
 })
 export class AziendaDetailsComponent implements OnInit{
-  id!: string;
-  azienda= this.aziendaService.getCompanyById(this.id);
-  constructor(private route: ActivatedRoute, private aziendaService: AziendaService){
+  azienda$!: Observable<Azienda[]>;
+  aziendaId!: any;
+
+  constructor(private router: ActivatedRoute, private aziendaService: AziendaService){
 
   }
   ngOnInit(): void {
-    // this.route.queryParams
-    // .subscribe(params => {
-    //   this.id = params['company'];
-    //   console.log(this.azienda);
-    // }
-    // );
+    console.log(this.azienda$);
+    this.router.paramMap.subscribe((param: ParamMap) => {
+      this.aziendaId = this.router.snapshot.paramMap.get('id');
+      this.azienda$ = this.aziendaService.getCompanyById(this.aziendaId);
+    })
 
-    // this.azienda = this.aziendaService.getCompanyById(this.id)
-    // console.log(this.azienda)
   }
-
 }

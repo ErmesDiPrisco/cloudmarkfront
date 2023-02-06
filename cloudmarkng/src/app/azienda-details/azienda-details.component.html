@@ -5,17 +5,17 @@
         <thead class="bg-dark text-white">
           <tr>
             <th scope="col" >ID</th>
-            <th scope="col">Customer Name</th>
-            <th scope="col">Cognome</th>
-            <th scope="col">Nome</th>
+            <th scope="col">Nome azienda</th>
+            <th scope="col">Indirizzo azienda</th>
+            <th scope="col">Email azienda</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let a of azienda | async">
-            <th>{{a}}</th>
-            <td>{{azienda}}</td>
-            <td>{{azienda}}</td>
-            <td>{{azienda}}</td>
+          <tr *ngFor="let a of azienda$ | async">
+            <th>{{a.id_azienda}}</th>
+            <td>{{a.nome}}</td>
+            <td>{{a.indirizzo}}</td>
+            <td>{{a.email}}</td>
           </tr>
         </tbody>
     </table><br>

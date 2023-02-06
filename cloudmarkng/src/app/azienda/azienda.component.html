@@ -30,9 +30,9 @@
       </div>
       <div class="col md-5" >
         <h3>{{e.nome}}</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, 
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore,
           voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        <button class="btn btn-dark" [routerLink]="['aziendaDetails/:']" [queryParams]="{ company: e.id_azienda }">Info</button>
+        <button class="btn btn-dark" routerLink='aziendaDetails/{{e.id_azienda}}'>Info</button>
       </div>
     </div>
     <!-- /.row -->
