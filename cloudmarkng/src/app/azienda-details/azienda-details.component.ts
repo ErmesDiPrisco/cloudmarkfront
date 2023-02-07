@@ -25,4 +25,8 @@ export class AziendaDetailsComponent implements OnInit{
     })
 
   }
+  deleteAzienda(id: string){
+      console.log(id)
+      return this.aziendaService.deleteCompany(id).subscribe((res)=>{console.log(res)})
+  }
 }

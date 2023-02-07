@@ -8,15 +8,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { AddAziendaComponent } from './add-azienda/add-azienda.component';
 import { FormsModule } from '@angular/forms';
-
-
+import { UpdateAziendaComponent } from './update-azienda/update-azienda.component';
 @NgModule({
   declarations: [
     AppComponent,
     AziendaComponent,
     AziendaDetailsComponent,
     HomeComponent,
-    AddAziendaComponent
+    AddAziendaComponent,
+    UpdateAziendaComponent
     ],
   imports: [
     BrowserModule , HttpClientModule, AppRoutingModule, FormsModule

@@ -16,8 +16,8 @@
             <th scope="col">FAX</th>
           </tr>
         </thead>
-        <tbody>
-          <tr *ngFor="let a of azienda$ | async">
+        <tbody *ngFor="let a of azienda$ | async">
+          <tr >
             <th>{{a.id_azienda}}</th>
             <td>{{a.nome}}</td>
             <td>{{a.indirizzo}}</td>
@@ -27,9 +27,13 @@
             <td>{{a.iban}}</td>
             <td>{{a.telefono}}</td>
             <td>{{a.pec}}</td>
-            <td>{{a.fax}}</td>
+            <td>{{a.fax}}</td><br>
           </tr>
         </tbody>
-    </table><br>
-    <button class="btn btn-dark" routerLink="/">Home</button>
+      </table><br>
+      <div *ngFor="let a of azienda$ | async">
+        <button class="btn btn-dark m-2" routerLink="/">Home</button>
+        <button class="btn btn-dark m-2" routerLink="aziendaUpdate/:id">Modifica</button>   
+        <button class="btn btn-dark m-2" (click)="deleteAzienda(a.id_azienda)" routerLink="/">Elimina</button>
+      </div>
     </div>
