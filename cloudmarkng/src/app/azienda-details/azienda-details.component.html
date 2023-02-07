@@ -33,7 +33,7 @@
       </table><br>
       <div *ngFor="let a of azienda$ | async">
         <button class="btn btn-dark m-2" routerLink="/">Home</button>
-        <button class="btn btn-dark m-2" routerLink="aziendaUpdate/:id">Modifica</button>   
+        <button class="btn btn-dark m-2" routerLink="/aziendaUpdate/{{a.id_azienda}}">Modifica</button>   
         <button class="btn btn-dark m-2" (click)="deleteAzienda(a.id_azienda)" routerLink="/">Elimina</button>
       </div>
     </div>

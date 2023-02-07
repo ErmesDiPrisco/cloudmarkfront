@@ -28,7 +28,9 @@ export class AziendaService {
   deleteCompany(id: string){
     return this.http.delete<Azienda[]>(`${URL}/azienda/delete?company=${id}`)
   }
-
+  updateCompany(arg: any){
+    return this.http.put<Azienda[]>(`${URL}/azienda/update`, arg)
+  }
 }
 
 
