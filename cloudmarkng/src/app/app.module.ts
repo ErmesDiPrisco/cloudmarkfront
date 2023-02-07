@@ -6,6 +6,8 @@ import { AziendaComponent } from './azienda/azienda.component';
 import { AziendaDetailsComponent } from './azienda-details/azienda-details.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { AddAziendaComponent } from './add-azienda/add-azienda.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,10 +15,11 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     AziendaComponent,
     AziendaDetailsComponent,
-    HomeComponent
+    HomeComponent,
+    AddAziendaComponent
     ],
   imports: [
-    BrowserModule , HttpClientModule, AppRoutingModule
+    BrowserModule , HttpClientModule, AppRoutingModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -21,6 +21,10 @@ export class AziendaService {
     return this.http.get<Azienda[]>(`${URL}/azienda/company?id=${id}`)
   }
 
+  addCompany(arg: any){
+        return  this.http.post<Azienda[]>(`${URL}/azienda/new`, arg)
+  }
+
 }
 
 
