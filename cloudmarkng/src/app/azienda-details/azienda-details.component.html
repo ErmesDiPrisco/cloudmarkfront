@@ -1,5 +1,5 @@
-<p>azienda-details works!</p>
-<h2 class="text-dark">Slave Details</h2>
+
+<h2 class="text-dark"> Dettaglio Azienda</h2>
 <div class="m-5">
     <table class="table ">
         <thead class="bg-dark text-white">
@@ -7,7 +7,13 @@
             <th scope="col" >ID</th>
             <th scope="col">Nome azienda</th>
             <th scope="col">Indirizzo azienda</th>
-            <th scope="col">Email azienda</th>
+            <th scope="col">CAP</th>
+            <th scope="col">Partita Iva</th>
+            <th scope="col">Email Azienda</th>
+            <th scope="col">IBAN</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">PEC</th>
+            <th scope="col">FAX</th>
           </tr>
         </thead>
         <tbody>
@@ -15,7 +21,13 @@
             <th>{{a.id_azienda}}</th>
             <td>{{a.nome}}</td>
             <td>{{a.indirizzo}}</td>
+            <td>{{a.cap}}</td>
+            <td>{{a.p_iva}}</td>
             <td>{{a.email}}</td>
+            <td>{{a.iban}}</td>
+            <td>{{a.telefono}}</td>
+            <td>{{a.pec}}</td>
+            <td>{{a.fax}}</td>
           </tr>
         </tbody>
     </table><br>
