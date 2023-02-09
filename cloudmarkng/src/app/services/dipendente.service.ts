@@ -36,4 +36,8 @@ export class DipendenteService {
   deleteEmployee(id:string) {
     return this.http.delete<Dipendente>(`${URL}/dipendente/delete?employee=${id}`)
   };
+  // tutti i dipendenti di un'unica azienda
+  getEmployeesByIdAzienda(id:string) {
+    return this.http.get<Dipendente[]>(`${URL}/dipendenteemployees_by_id_azienda?id=${id}`)
+  }
 }

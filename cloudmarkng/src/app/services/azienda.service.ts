@@ -22,7 +22,7 @@ export class AziendaService {
   };
   // aggiungi azienda
   addCompany(arg: any){
-        return  this.http.post<Azienda[]>(`${URL}/azienda/new`, arg)
+    return  this.http.post<Azienda[]>(`${URL}/azienda/new`, arg)
   };
   // elimina azienda
   deleteCompany(id: string){
