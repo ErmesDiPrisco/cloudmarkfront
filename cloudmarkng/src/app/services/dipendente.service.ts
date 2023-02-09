@@ -40,4 +40,8 @@ export class DipendenteService {
   getEmployeesByIdAzienda(id:string) {
     return this.http.get<Dipendente[]>(`${URL}/dipendenteemployees_by_id_azienda?id=${id}`)
   }
+  // link all'azionda
+  linkToCompany(args: any){
+    return this.http.post<any>(`${URL}/dipendente/link`, args)
+  }
 }

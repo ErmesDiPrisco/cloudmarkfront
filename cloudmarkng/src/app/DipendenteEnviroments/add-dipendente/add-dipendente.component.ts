@@ -17,4 +17,14 @@ export class AddDipendenteComponent {
     this.servizioDipendente.addEmployee(dipendente).subscribe((res)=> {console.log(res)})
     this.router.navigate(['/'])
   }
+
+  aggiungiLinkAzienda(link: {id_dipendente: string, id_azienda: string, data_inizio: Date, matricola: string, data_fine:Date}){
+    this.servizioDipendente.linkToCompany(link).subscribe((res)=> {console.log(res)})
+  }
+
+  submit(form1: any, form2: any){
+    this.aggiungiDipendente(form1)
+    this.aggiungiLinkAzienda(form2)
+    this.router.navigate(['/'])
+  }
 }
