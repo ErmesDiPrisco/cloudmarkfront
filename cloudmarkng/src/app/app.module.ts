@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { AddAziendaComponent } from './AziendaEnviroments/add-azienda/add-azienda.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateAziendaComponent } from './AziendaEnviroments/update-azienda/update-azienda.component';
+import { DipendenteComponent } from './DipendenteEnviroments/dipendente/dipendente.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { UpdateAziendaComponent } from './AziendaEnviroments/update-azienda/upda
     AziendaDetailsComponent,
     HomeComponent,
     AddAziendaComponent,
-    UpdateAziendaComponent
+    UpdateAziendaComponent,
+    DipendenteComponent
     ],
   imports: [
     BrowserModule , HttpClientModule, AppRoutingModule, FormsModule
