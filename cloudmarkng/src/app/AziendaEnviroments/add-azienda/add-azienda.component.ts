@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Azienda } from '../modules/azienda';
-import { AziendaService } from '../services/azienda.service';
+import { Azienda } from '../../modules/azienda';
+import { AziendaService } from '../../services/azienda.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 

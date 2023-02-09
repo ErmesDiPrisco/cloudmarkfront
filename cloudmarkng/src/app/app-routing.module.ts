@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AziendaDetailsComponent } from './azienda-details/azienda-details.component';
-import { AziendaComponent } from './azienda/azienda.component';
+import { AziendaDetailsComponent } from './AziendaEnviroments/azienda-details/azienda-details.component';
+import { AziendaComponent } from './AziendaEnviroments/azienda/azienda.component';
 import { HomeComponent } from './home/home.component';
-import { AddAziendaComponent } from './add-azienda/add-azienda.component';
-import { UpdateAziendaComponent } from './update-azienda/update-azienda.component';
+import { AddAziendaComponent } from './AziendaEnviroments/add-azienda/add-azienda.component';
+import { UpdateAziendaComponent } from './AziendaEnviroments/update-azienda/update-azienda.component';
 
 
 

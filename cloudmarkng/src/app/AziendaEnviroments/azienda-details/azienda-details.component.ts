@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { AziendaService } from '../services/azienda.service';
+import { AziendaService } from '../../services/azienda.service';
 import { AziendaComponent } from '../azienda/azienda.component';
-import { Azienda } from '../modules/azienda';
+import { Azienda } from '../../modules/azienda';
 import { Observable } from 'rxjs';
 
 @Component({

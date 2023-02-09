@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AziendaService } from '../services/azienda.service';
+import { AziendaService } from '../../services/azienda.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { Azienda } from '../modules/azienda';
+import { Azienda } from '../../modules/azienda';
 import { Observable } from 'rxjs';
 import { FormControl } from '@angular/forms';
 
@@ -28,6 +28,6 @@ export class UpdateAziendaComponent implements OnInit{
   modificaAzienda(aziende: Azienda){
     console.log(aziende)
     this.aziendaService.updateCompany(aziende).subscribe((res)=> {console.log(res)})
-    // this.router.navigate(['/'])
+    this.router.navigate(['/'])
   }
 }
