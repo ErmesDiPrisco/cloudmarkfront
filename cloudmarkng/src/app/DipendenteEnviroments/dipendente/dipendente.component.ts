@@ -23,4 +23,8 @@ export class DipendenteComponent implements OnInit{
     console.log(this.dipendente$);
 
   }
+
+  addEmployee() {
+
+  }
 }

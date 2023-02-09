@@ -21,7 +21,7 @@ export class DipendenteService {
     return this.http.get<Dipendente>(`${URL}/dipendente/employee?id=${id}`)
   };
   // aggiungi dipendente
-  addEmployee(arg: string) {
+  addEmployee(arg: object) {
     return this.http.post<Dipendente[]>(`${URL}/dipendente/new`, arg)
   };
   // trovare diversi dipendenti

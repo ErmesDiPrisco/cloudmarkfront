@@ -10,6 +10,7 @@ import { AddAziendaComponent } from './AziendaEnviroments/add-azienda/add-aziend
 import { FormsModule } from '@angular/forms';
 import { UpdateAziendaComponent } from './AziendaEnviroments/update-azienda/update-azienda.component';
 import { DipendenteComponent } from './DipendenteEnviroments/dipendente/dipendente.component';
+import { AddDipendenteComponent } from './DipendenteEnviroments/add-dipendente/add-dipendente.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { DipendenteComponent } from './DipendenteEnviroments/dipendente/dipenden
     HomeComponent,
     AddAziendaComponent,
     UpdateAziendaComponent,
-    DipendenteComponent
+    DipendenteComponent,
+    AddDipendenteComponent
     ],
   imports: [
     BrowserModule , HttpClientModule, AppRoutingModule, FormsModule
