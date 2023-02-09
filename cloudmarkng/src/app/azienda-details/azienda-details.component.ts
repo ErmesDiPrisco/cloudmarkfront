@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./azienda-details.component.css']
 })
 export class AziendaDetailsComponent implements OnInit{
-  azienda$!: Observable<Azienda[]>;
+  azienda$!: Observable<Azienda>;
   aziendaId!: any;
 
   constructor(private router: ActivatedRoute, private aziendaService: AziendaService){
@@ -20,8 +20,8 @@ export class AziendaDetailsComponent implements OnInit{
   ngOnInit(): void {
     console.log(this.azienda$);
     this.router.paramMap.subscribe((param: ParamMap) => {
-      this.aziendaId = this.router.snapshot.paramMap.get('id');
-      this.azienda$ = this.aziendaService.getCompanyById(this.aziendaId);
+      // this.aziendaId = this.router.snapshot.paramMap.get('id');
+      this.azienda$ = this.aziendaService.getCompanyById(param.get('id')!);
     })
 
   }

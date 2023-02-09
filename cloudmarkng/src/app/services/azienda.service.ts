@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Azienda } from '../modules/azienda';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { URL } from 'src/environments/config';
 
@@ -18,7 +18,8 @@ export class AziendaService {
     return this.http.get<Azienda[]>(`${URL}/azienda/all`)
   }
   getCompanyById(id: string) {
-    return this.http.get<Azienda[]>(`${URL}/azienda/company?id=${id}`)
+    return this.http.get<Azienda>(`${URL}/azienda/company?id=${id}`).pipe(tap((data)=>{console.log(data)}))
+    
   }
 
   addCompany(arg: any){

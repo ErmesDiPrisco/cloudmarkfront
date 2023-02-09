@@ -1,20 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AziendaService } from '../services/azienda.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { Azienda } from '../modules/azienda';
+import { Observable } from 'rxjs';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-update-azienda',
   templateUrl: './update-azienda.component.html',
   styleUrls: ['./update-azienda.component.css']
 })
-export class UpdateAziendaComponent {
+export class UpdateAziendaComponent implements OnInit{
+  aziendaID: any;
+  azienda!: Observable<Azienda>;
 
-
-  constructor(private aziendaService: AziendaService, private router: Router){
+  constructor(private aziendaService: AziendaService, private router: Router, private route: ActivatedRoute){
 
   }
 
-  modificaAzienda(aziende:{id_azienda: string, nome: string, p_iva: string, indirizzo: string, cap: string, iban: string, telefono: string, email: string, pec: string, fax: string}){
+  ngOnInit(): void {
+    this.route.paramMap.subscribe((param: ParamMap) => {
+      this.aziendaID = this.route.snapshot.paramMap.get('id');
+      this.azienda = this.aziendaService.getCompanyById(this.aziendaID);
+    })
+  }
+
+  modificaAzienda(aziende: Azienda){
     console.log(aziende)
     this.aziendaService.updateCompany(aziende).subscribe((res)=> {console.log(res)})
     // this.router.navigate(['/'])

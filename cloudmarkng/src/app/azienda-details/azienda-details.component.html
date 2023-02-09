@@ -1,6 +1,6 @@
 
 <h2 class="text-dark"> Dettaglio Azienda</h2>
-<div class="m-5">
+<div class="m-5" *ngIf="azienda$ | async as a">
     <table class="table ">
         <thead class="bg-dark text-white">
           <tr>
@@ -16,7 +16,7 @@
             <th scope="col">FAX</th>
           </tr>
         </thead>
-        <tbody *ngFor="let a of azienda$ | async">
+        <tbody >
           <tr >
             <th>{{a.id_azienda}}</th>
             <td>{{a.nome}}</td>
@@ -31,7 +31,7 @@
           </tr>
         </tbody>
       </table><br>
-      <div *ngFor="let a of azienda$ | async">
+      <div>
         <button class="btn btn-dark m-2" routerLink="/">Home</button>
         <button class="btn btn-dark m-2" routerLink="/aziendaUpdate/{{a.id_azienda}}">Modifica</button>   
         <button class="btn btn-dark m-2" (click)="deleteAzienda(a.id_azienda)" routerLink="/">Elimina</button>
