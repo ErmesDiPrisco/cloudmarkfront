@@ -1,59 +1,115 @@
 <div class="container">
-  <!-- Angular crea una proprietà che definisce il form : NgForm -->
-  <!-- Template Driven -->
-  <form (ngSubmit)="aggiungiDipendente(form.value)" class="form" #form="ngForm">
-    <fieldset >
-      <legend>Anagrafica</legend>
-      <div class="form-group">
-        <label for="id_dipendente">*Id Dipendente</label>
-        <input type="text" id="id_dipendente" name="id_dipendente" class="form-control" ngModel #id_dipendente="ngModel" required minlength="3">
-        <div class="error" *ngIf="nome.touched && !nome.valid">
-          Il campo non può essere vuoto
+  <!-- main form -->
+  <form (ngSubmit)="submit(form1.value, form2.value)" class="form" #mainForm="ngForm">
+    <!-- first form  -->
+    <form (ngSubmit)="aggiungiDipendente(form1.value)" class="form" #form1="ngForm">
+      <fieldset >
+        <legend>Anagrafica</legend>
+        <div class="form-group">
+          <label for="id_dipendente">*Id Dipendente</label>
+          <input type="text" id="id_dipendente" name="id_dipendente" class="form-control" ngModel #id_dipendente="ngModel" required minlength="3">
+          <div class="error" *ngIf="nome.touched && !nome.valid">
+            Il campo non può essere vuoto
+          </div>
         </div>
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" class="form-control" ngModel #nome="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="cognome">Cognome</label>
+          <input type="text" id="cognome" name="cognome" class="form-control" ngModel #cognome="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="cf">Codice Fiscale</label>
+          <input type="text" id="cf" name="cf" class="form-control" ngModel #cf="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="id_tipo_contratto">Id tipo contratto</label>
+          <input type="text" id="id_tipo_contratto" name="id_tipo_contratto" class="form-control" ngModel #id_tipo_contratto="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="data_nascita">Data di nascita</label>
+          <input type="date" id="data_nascita" name="data_nascita" class="form-control" ngModel #data_nascita="ngModel">
+        </div>
+      </fieldset>
+      <fieldset >
+        <legend >Contatti</legend>
+        <div class="form-group">
+          <label for="indirizzo">Indirizzo</label>
+          <input type="text" id="indirizzo" name="indirizzo" class="form-control" ngModel #indirizzo="ngModel" indirizzo required>
+        </div>
+        <div class="form-group">
+          <label for="iban">iban</label>
+          <input type="text" id="iban" name="iban" class="form-control" ngModel #iban="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="telefono">telefono</label>
+          <input type="text" id="telefono" name="telefono" class="form-control" ngModel #telefono="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="email">email</label>
+          <input type="text" id="email" name="email" class="form-control" ngModel #email="ngModel">
+        </div>
+      </fieldset>
+      <div class="actions">
+        <button type="submit" class="btn btn-dark">Submit</button>
+          <p [hidden]="form1.valid">Compila tutti i campi contrassegnati con un *</p>
       </div>
-      <div class="form-group">
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" class="form-control" ngModel #nome="ngModel">
+    </form>
+    <!-- second form -->
+    <form (ngSubmit)="aggiungiDipendente(form2.value)" class="form" #form2="ngForm">
+      <fieldset >
+        <div class="form-group">
+          <label for="id_dipendente">*Id Dipendente</label>
+          <input type="text" id="id_dipendente" name="id_dipendente" class="form-control" ngModel #id_dipendente="ngModel" required minlength="3">
+          <div class="error" *ngIf="nome.touched && !nome.valid">
+            Il campo non può essere vuoto
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="id_dipendente">*Id Azienda</label>
+          <input type="text" id="id_dipendente" name="id_dipendente" class="form-control" ngModel #id_dipendente="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="cognome">Cognome</label>
+          <input type="text" id="cognome" name="cognome" class="form-control" ngModel #cognome="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="cf">Codice Fiscale</label>
+          <input type="text" id="cf" name="cf" class="form-control" ngModel #cf="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="id_tipo_contratto">Id tipo contratto</label>
+          <input type="text" id="id_tipo_contratto" name="id_tipo_contratto" class="form-control" ngModel #id_tipo_contratto="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="data_nascita">Data di nascita</label>
+          <input type="date" id="data_nascita" name="data_nascita" class="form-control" ngModel #data_nascita="ngModel">
+        </div>
+      </fieldset>
+      <fieldset >
+        <div class="form-group">
+          <label for="indirizzo">Indirizzo</label>
+          <input type="text" id="indirizzo" name="indirizzo" class="form-control" ngModel #indirizzo="ngModel" indirizzo required>
+        </div>
+        <div class="form-group">
+          <label for="iban">iban</label>
+          <input type="text" id="iban" name="iban" class="form-control" ngModel #iban="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="telefono">telefono</label>
+          <input type="text" id="telefono" name="telefono" class="form-control" ngModel #telefono="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="email">email</label>
+          <input type="text" id="email" name="email" class="form-control" ngModel #email="ngModel">
+        </div>
+      </fieldset>
+      <div class="actions">
+        <button type="submit" class="btn btn-dark">Submit</button>
+          <p [hidden]="form1.valid">Compila tutti i campi contrassegnati con un *</p>
       </div>
-      <div class="form-group">
-        <label for="cognome">Cognome</label>
-        <input type="text" id="cognome" name="cognome" class="form-control" ngModel #cognome="ngModel">
-      </div>
-      <div class="form-group">
-        <label for="cf">Codice Fiscale</label>
-        <input type="text" id="cf" name="cf" class="form-control" ngModel #cf="ngModel">
-      </div>
-      <div class="form-group">
-        <label for="id_tipo_contratto">Id tipo contratto</label>
-        <input type="text" id="id_tipo_contratto" name="id_tipo_contratto" class="form-control" ngModel #id_tipo_contratto="ngModel">
-      </div>
-      <div class="form-group">
-        <label for="data_nascita">Data di nascita</label>
-        <input type="date" id="data_nascita" name="data_nascita" class="form-control" ngModel #data_nascita="ngModel">
-      </div>
-    </fieldset>
-    <fieldset >
-      <legend >Contatti</legend>
-      <div class="form-group">
-        <label for="indirizzo">Indirizzo</label>
-        <input type="text" id="indirizzo" name="indirizzo" class="form-control" ngModel #indirizzo="ngModel" indirizzo required>
-      </div>
-      <div class="form-group">
-        <label for="iban">iban</label>
-        <input type="text" id="iban" name="iban" class="form-control" ngModel #iban="ngModel">
-      </div>
-      <div class="form-group">
-        <label for="telefono">telefono</label>
-        <input type="text" id="telefono" name="telefono" class="form-control" ngModel #telefono="ngModel">
-      </div>
-      <div class="form-group">
-        <label for="email">email</label>
-        <input type="text" id="email" name="email" class="form-control" ngModel #email="ngModel">
-      </div>
-    </fieldset>
-    <div class="actions">
-      <button type="submit" class="btn btn-dark">Submit</button>
-        <p [hidden]="form.valid">Compila tutti i campi contrassegnati con un *</p>
-    </div>
+    </form>
   </form>
 </div>
