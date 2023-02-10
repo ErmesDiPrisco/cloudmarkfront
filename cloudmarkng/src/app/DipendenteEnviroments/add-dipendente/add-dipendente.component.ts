@@ -17,13 +17,13 @@ export class AddDipendenteComponent {
 
   aggiungiDipendente(dipendente: {id_dipendente: string, nome: string, cognome: string, cf:string, iban: string,
                     id_tipo_contratto: string, email: string, telefono: string, data_nascita: Date}){
-    // this.servizioDipendente.addEmployee(dipendente).subscribe((res)=> {console.log(res)})
-    
+    this.servizioDipendente.addEmployee(dipendente).subscribe((res)=> {console.log(res)})
+
   }
 
   aggiungiLinkAzienda(link: {id_dipendente: string, id_azienda: string, data_inizio: Date, matricola: string, data_fine:Date}, id: string){
-    // this.servizioDipendente.linkToCompany(link).subscribe((res)=> {console.log(res)})
-     link.id_dipendente=id
+    link.id_dipendente = id
+    this.servizioDipendente.linkToCompany(link).subscribe((res)=> {console.log(res)})
   }
 
   submit(form1: FormGroup, form2: FormGroup){
@@ -31,6 +31,6 @@ export class AddDipendenteComponent {
     this.aggiungiLinkAzienda(form2.value, form1.controls['id_dipendente'].value)
     console.log(form1.value)
     console.log(form2.value, form1.controls['id_dipendente'].value)
-    // this.router.navigate(['/'])
+    this.router.navigate(['/'])
   }
 }
