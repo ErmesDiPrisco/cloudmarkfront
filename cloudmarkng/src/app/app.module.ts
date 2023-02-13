@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { UpdateAziendaComponent } from './AziendaEnviroments/update-azienda/update-azienda.component';
 import { DipendenteComponent } from './DipendenteEnviroments/dipendente/dipendente.component';
 import { AddDipendenteComponent } from './DipendenteEnviroments/add-dipendente/add-dipendente.component';
+import { ClienteComponent } from './ClienteEnviroments/cliente/cliente.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { AddDipendenteComponent } from './DipendenteEnviroments/add-dipendente/a
     AddAziendaComponent,
     UpdateAziendaComponent,
     DipendenteComponent,
-    AddDipendenteComponent
+    AddDipendenteComponent,
+    ClienteComponent
     ],
   imports: [
     BrowserModule , HttpClientModule, AppRoutingModule, FormsModule
