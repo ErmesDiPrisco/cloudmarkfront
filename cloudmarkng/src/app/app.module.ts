@@ -12,6 +12,7 @@ import { UpdateAziendaComponent } from './AziendaEnviroments/update-azienda/upda
 import { DipendenteComponent } from './DipendenteEnviroments/dipendente/dipendente.component';
 import { AddDipendenteComponent } from './DipendenteEnviroments/add-dipendente/add-dipendente.component';
 import { ClienteComponent } from './ClienteEnviroments/cliente/cliente.component';
+import { AddClienteComponent } from './ClienteEnviroments/add-cliente/add-cliente.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { ClienteComponent } from './ClienteEnviroments/cliente/cliente.component
     UpdateAziendaComponent,
     DipendenteComponent,
     AddDipendenteComponent,
-    ClienteComponent
+    ClienteComponent,
+    AddClienteComponent
     ],
   imports: [
     BrowserModule , HttpClientModule, AppRoutingModule, FormsModule
