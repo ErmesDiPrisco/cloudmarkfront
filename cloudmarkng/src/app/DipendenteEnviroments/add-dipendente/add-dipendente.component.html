@@ -25,8 +25,12 @@
           <input type="text" id="cf" name="cf" class="form-control" ngModel #cf="ngModel">
         </div>
         <div class="form-group">
-          <label for="id_tipo_contratto">Id tipo contratto</label>
-          <input type="text" id="id_tipo_contratto" name="id_tipo_contratto" class="form-control" ngModel #id_tipo_contratto="ngModel">
+          <label for="id_tipo_contratto">Tipo contratto</label> <br>
+          <select id="id_tipo_contratto" name="id_tipo_contratto" ngModel #id_tipo_contratto="ngModel">
+            <option value="198ef11d-cf73-4245-8469-2ddfa9979acf">Indeterminato</option>
+            <option value="52fbe812-08f6-11ed-861d-0242ac120002">Determinato</option>
+          </select>
+          <!-- <input type="text" id="id_tipo_contratto" name="id_tipo_contratto" class="form-control" ngModel #id_tipo_contratto="ngModel"> -->
         </div>
         <div class="form-group">
           <label for="data_nascita">Data di nascita</label>
@@ -57,11 +61,10 @@
     <form class="form2" #form2="ngForm">
       <fieldset >
         <div class="form-group">
-          <input type="text" [(value)]="form1.value.id_dipendente" id="id_dipendente" name="id_dipendente" class="form-control" ngModel #id_dipendente="ngModel" >
+          <input type="text" [(value)]="form1.value.id_dipendente" id="id_dipendente" name="id_dipendente" class="form-control" ngModel #id_dipendente="ngModel" hidden>
         </div>
         <div *ngIf="dipendente$ | async as a" class="form-group">
-          <label for="id_azienda">azienda</label>
-          <input type="text" id="id_azienda" value="{{id}}" name="id_azienda" class="form-control" ngModel="{{id}}">
+          <input type="text" id="id_azienda" value="{{id}}" name="id_azienda" class="form-control" ngModel="{{id}}" hidden>
         </div>
         <div class="form-group">
           <label for="data_inizio">Data Inizio</label>

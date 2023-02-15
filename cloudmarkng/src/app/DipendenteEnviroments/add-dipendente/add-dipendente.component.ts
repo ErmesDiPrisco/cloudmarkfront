@@ -44,7 +44,7 @@ export class AddDipendenteComponent implements OnInit{
 
   submit(form1: FormGroup, form2: FormGroup){
     this.aggiungiDipendente(form1.value)
-    // this.aggiungiLinkAzienda(form2.value, form1.controls['id_dipendente'].value)
+    this.aggiungiLinkAzienda(form2.value, form1.controls['id_dipendente'].value)
     console.log(form1.value)
     console.log(form2.value, form1.controls['id_dipendente'].value)
     // this.router.navigate(['/'])
