@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { AziendaService } from '../../services/azienda.service';
 import { AziendaComponent } from '../azienda/azienda.component';
@@ -12,7 +12,8 @@ import { Observable } from 'rxjs';
 })
 export class AziendaDetailsComponent implements OnInit{
   azienda$!: Observable<Azienda>;
-  aziendaId!: any;
+  @Input() aziendaId!: any;
+  
 
   constructor(private router: ActivatedRoute, private aziendaService: AziendaService){
 
@@ -20,8 +21,8 @@ export class AziendaDetailsComponent implements OnInit{
   ngOnInit(): void {
     console.log(this.azienda$);
     this.router.paramMap.subscribe((param: ParamMap) => {
-      // this.aziendaId = this.router.snapshot.paramMap.get('id');
-      this.azienda$ = this.aziendaService.getCompanyById(param.get('id')!);
+    this.aziendaId = this.router.snapshot.paramMap.get('id');
+    this.azienda$ = this.aziendaService.getCompanyById(param.get('id')!);
     })
 
   }

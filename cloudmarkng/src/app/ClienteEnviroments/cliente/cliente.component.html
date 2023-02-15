@@ -13,10 +13,11 @@
         <th scope="col">Email</th>
         <th scope="col">Pec</th>
         <th scope="col">Fax</th>
+        <th scope="col">Commesse</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let c of cliente$ | async">
+      <tr *ngFor="let c of cliente$ | async" >
         <th>{{c.id_cliente}}</th>
         <td>{{c.nome}}</td>
         <td>{{c.p_iva}}</td>
@@ -27,6 +28,7 @@
         <td>{{c.email}}</td>
         <td>{{c.pec}}</td>
         <td>{{c.fax}}</td>
+        <td *ngIf="numeroCommesse">{{numeroCommesse}}</td>
       </tr>
     </tbody>
   </table><br>

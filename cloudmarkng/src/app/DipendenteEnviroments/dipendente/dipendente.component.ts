@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Dipendente } from 'src/app/modules/dipendente';
@@ -12,6 +12,7 @@ import { DipendenteService } from 'src/app/services/dipendente.service';
 export class DipendenteComponent implements OnInit{
   dipendente$!: Observable<Dipendente[]>;
   dipendenteId!: any;
+  @Input() idaz: any;
 
   constructor(private router: ActivatedRoute, private servizioDipendente: DipendenteService) {};
 

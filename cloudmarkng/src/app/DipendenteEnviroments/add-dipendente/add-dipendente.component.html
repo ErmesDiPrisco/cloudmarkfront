@@ -57,11 +57,11 @@
     <form class="form2" #form2="ngForm">
       <fieldset >
         <div class="form-group">
-          <input type="text" [(value)]="form1.value.id_dipendente" id="id_dipendente" name="id_dipendente" class="form-control" ngModel #id_dipendente="ngModel" hidden>
+          <input type="text" [(value)]="form1.value.id_dipendente" id="id_dipendente" name="id_dipendente" class="form-control" ngModel #id_dipendente="ngModel" >
         </div>
-        <div *ngIf="azienda$ | async as a" class="form-group">
-          <label for="id_azienda">*Id Azienda</label>
-          <input type="text" id="id_azienda" value='{{a.id_azienda}}' name="id_azienda" class="form-control" ngModel #id_azienda="ngModel">
+        <div *ngIf="dipendente$ | async as a" class="form-group">
+          <label for="id_azienda">azienda</label>
+          <input type="text" id="id_azienda" value="{{id}}" name="id_azienda" class="form-control" ngModel="{{id}}">
         </div>
         <div class="form-group">
           <label for="data_inizio">Data Inizio</label>

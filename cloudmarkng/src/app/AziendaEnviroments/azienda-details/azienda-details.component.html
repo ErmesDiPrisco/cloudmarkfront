@@ -17,8 +17,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th>{{a.id_azienda}}</th>
+      <tr >
+        <th >{{a.id_azienda}}</th>
         <td>{{a.nome}}</td>
         <td>{{a.indirizzo}}</td>
         <td>{{a.cap}}</td>
@@ -40,12 +40,12 @@
 
 <div class="m-5 row">
   <div class="col-6">
-    <app-dipendente></app-dipendente>
+    <app-dipendente [idaz]="aziendaId"></app-dipendente>
   </div>
 </div>
 
 <div class="m-5 row">
   <div class="col-6">
-    <app-cliente></app-cliente>
+    <app-cliente ></app-cliente>
   </div>
 </div>

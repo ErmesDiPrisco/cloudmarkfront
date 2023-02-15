@@ -32,7 +32,7 @@ export class ClienteService {
   }
   // clienti da id commessa
   getCustomersByCommessa(id: string){
-    return this.http.get<Cliente[]>(`${URL}/clientecustomer_by_id_commessa?id=${id}`)
+    return this.http.get<Cliente[]>(`${URL}/clientecustomer_by_commessa?id=${id}`)
   }
 
 
