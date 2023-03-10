@@ -25,6 +25,8 @@
         <td>{{d.email}}</td>
         <td>{{d.telefono}}</td>
         <td>{{d.data_nascita}}</td>
+        <button  class="btn bg-dark text-white m-2" (click)="deleteEmployee(d.id_dipendente, idaz)">Elimina</button>
+        <button  class="btn bg-dark text-white m-2" routerLink="/dipendenteUpdate/{{d.id_dipendente}}">Modifica</button>
       </tr>
     </tbody>
   </table><br>

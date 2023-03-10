@@ -34,7 +34,7 @@ export class DipendenteService {
   };
   // eliminare dipendnete
   deleteEmployee(id:string) {
-    return this.http.delete<Dipendente>(`${URL}/dipendente/delete?employee=${id}`)
+    return this.http.delete<Dipendente>(`${URL}/dipendente/delete?dipendente=${id}`)
   };
   // tutti i dipendenti di un'unica azienda
   getEmployeesByIdAzienda(id:string) {
@@ -43,5 +43,9 @@ export class DipendenteService {
   // link all'azionda
   linkToCompany(args: any){
     return this.http.post<any>(`${URL}/dipendente/link`, args)
+  }
+
+  deleteLink(id_dipendente: string, id_azienda: string){
+    return this.http.delete<any>(`${URL}/dipendente/deletelink?id_dipendente=${id_dipendente}&id_azienda=${id_azienda}`)
   }
 }

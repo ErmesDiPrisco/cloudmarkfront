@@ -13,6 +13,7 @@ import { DipendenteComponent } from './DipendenteEnviroments/dipendente/dipenden
 import { AddDipendenteComponent } from './DipendenteEnviroments/add-dipendente/add-dipendente.component';
 import { ClienteComponent } from './ClienteEnviroments/cliente/cliente.component';
 import { AddClienteComponent } from './ClienteEnviroments/add-cliente/add-cliente.component';
+import { UpdateDipendenteComponent } from './DipendenteEnviroments/update-dipendente/update-dipendente.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { AddClienteComponent } from './ClienteEnviroments/add-cliente/add-client
     DipendenteComponent,
     AddDipendenteComponent,
     ClienteComponent,
-    AddClienteComponent
+    AddClienteComponent,
+    UpdateDipendenteComponent
     ],
   imports: [
     BrowserModule , HttpClientModule, AppRoutingModule, FormsModule
