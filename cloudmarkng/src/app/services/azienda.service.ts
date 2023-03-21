@@ -14,7 +14,8 @@ export class AziendaService {
   constructor(private http: HttpClient) {};
   // tutte le aziende
   getAllCompanies(): Observable<Azienda[]> {
-    return this.http.get<Azienda[]>(`${URL}/azienda/all`)
+    // return this.http.get<Azienda[]>(`${URL}/azienda/all`)
+    return this.http.get<Azienda[]>("http://localhost:3000/")
   };
   // singola azienda by id
   getCompanyById(id: string) {
