@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Azienda } from '../modules/azienda';
 import { Observable, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { URL } from 'src/environments/config';
+import { URL, URL1 } from 'src/environments/config';
 
 
 @Injectable({
