@@ -24,8 +24,10 @@ ngOnInit(): void {
   })
   console.log(this.dipendente$);
  }
- prova(){
- 
- }
+ modificaDipendente(dipendente: Dipendente){
+  console.log(dipendente)
+  this.servizioDipendente.updateEmployee(dipendente).subscribe((res)=> {console.log(res)})
+  this.router.navigate(['/'])
+}
 }
 

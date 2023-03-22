@@ -31,8 +31,9 @@ export class DipendenteService {
     return this.http.get<Dipendente[]>(`${URL}/dipendente/multiemployee?value=${value}&id=${id}`)
   };
   // aggiornare dipendente
-  updateEmployee(arg: string) {
-    return this.http.put<Dipendente>(`${URL}/dipendente/update`, arg)
+  updateEmployee(arg: any) {
+    // return this.http.put<Dipendente>(`${URL}/dipendente/update`, arg)
+    return this.http.put<Dipendente>(`${URL1}/dipendenteUpdate`, arg)
   };
   // eliminare dipendnete
   deleteEmployee(id:string) {

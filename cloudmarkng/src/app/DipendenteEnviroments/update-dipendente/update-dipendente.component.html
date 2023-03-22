@@ -4,7 +4,7 @@
 
     <div class="container" >
         
-        <form  *ngFor="let d of dipendente$ | async" (ngSubmit)="prova()" class="form" #form="ngForm">
+        <form  *ngFor="let d of dipendente$ | async" (ngSubmit)="modificaDipendente(form.value)" class="form" #form="ngForm">
           <fieldset >
             <legend>Anagrafica</legend>
             <div class="form-group">
