@@ -19,7 +19,8 @@ export class AziendaService {
   };
   // singola azienda by id
   getCompanyById(id: string) {
-    return this.http.get<Azienda>(`${URL}/azienda/company?id=${id}`).pipe(tap((data)=>{console.log(data)}))
+    // return this.http.get<Azienda>(`${URL}/azienda/company?id=${id}`).pipe(tap((data)=>{console.log(data)}))
+    return this.http.get<Azienda>(`${URL1}/azienda/${id}`).pipe(tap((data)=>{console.log(data)}))
   };
   // aggiungi azienda
   addCompany(arg: any){
