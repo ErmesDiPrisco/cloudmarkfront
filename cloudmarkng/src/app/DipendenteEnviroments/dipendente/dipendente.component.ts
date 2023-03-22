@@ -26,8 +26,8 @@ export class DipendenteComponent implements OnInit{
   }
 
   deleteEmployee(id_dipendente: string, id_azienda: string) {
-    this.servizioDipendente.deleteLink(id_dipendente, id_azienda).subscribe((res)=>{console.log(res)})
     this.servizioDipendente.deleteEmployee(id_dipendente).subscribe((res)=>{console.log(res)})
+    this.servizioDipendente.deleteLink(id_dipendente, id_azienda).subscribe((res)=>{console.log(res)})
     console.log(id_azienda, id_dipendente)
 
   }

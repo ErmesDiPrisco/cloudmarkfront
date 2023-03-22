@@ -24,15 +24,18 @@ export class AziendaService {
   };
   // aggiungi azienda
   addCompany(arg: any){
-    return  this.http.post<Azienda[]>(`${URL}/azienda/new`, arg)
+  //   return  this.http.post<Azienda[]>(`${URL}/azienda/new`, arg)
+    return  this.http.post<Azienda[]>(`${URL1}/azienda/addAzienda`, arg)
   };
   // elimina azienda
   deleteCompany(id: string){
-    return this.http.delete<Azienda[]>(`${URL}/azienda/delete?company=${id}`)
+    // return this.http.delete<Azienda[]>(`${URL}/azienda/delete?company=${id}`)
+    return this.http.delete<Azienda[]>(`${URL1}/aziendaDelete/${id}`)
   };
   // aggiorna azienda
   updateCompany(arg: any){
-    return this.http.put<Azienda[]>(`${URL}/azienda/update`, arg)
+    // return this.http.put<Azienda[]>(`${URL}/azienda/update`, arg)
+    return this.http.put<Azienda[]>(`${URL1}/aziendaUpdate`, arg)
   };
 }
 

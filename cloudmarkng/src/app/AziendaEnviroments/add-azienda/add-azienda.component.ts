@@ -19,6 +19,6 @@ export class AddAziendaComponent {
   aggiungiAzienda(aziende: {id_azienda: string, nome: string, p_iva: string, indirizzo: string, cap: string, iban: string, telefono: string, email: string, pec: string, fax: string}){
    console.log(aziende)
    this.aziendaService.addCompany(aziende).subscribe((res)=> {console.log(res)})
-   this.router.navigate(['/'])
+  //  this.router.navigate(['/'])
   }
 }
